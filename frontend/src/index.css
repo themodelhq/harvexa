@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply bg-base text-cream font-body antialiased;
+  background-image: theme('backgroundImage.grid-glow'), theme('backgroundImage.rows');
+  background-attachment: fixed;
+}
+
+::selection {
+  background: #e8a33d;
+  color: #12130f;
+}
+
+.field-panel {
+  @apply bg-panel/80 border border-soil rounded-2xl backdrop-blur-sm;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl bg-accent px-5 py-2.5 font-display font-semibold text-base
+  hover:brightness-110 active:brightness-95 transition disabled:opacity-40 disabled:cursor-not-allowed;
+}
+
+.btn-ghost {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl border border-soil px-5 py-2.5 font-display font-semibold text-cream/90
+  hover:border-accent2 hover:text-accent2 transition disabled:opacity-40 disabled:cursor-not-allowed;
+}
+
+.input-field {
+  @apply w-full rounded-xl bg-base/60 border border-soil px-4 py-2.5 text-cream placeholder:text-cream/30
+  focus:outline-none focus:border-accent2 transition font-mono text-sm;
+}
+
+a { color: inherit; }
+
+:focus-visible {
+  outline: 2px solid #8fae4f;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
